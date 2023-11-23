@@ -1,6 +1,50 @@
 import java.util.LinkedList;
 
-public class CISQueue {
+public class CISQueue{
+    private LinkedList<Integer> queue;
+    private int Size;
+
+    @Override
+    public String toString() {
+        return "CISQueue{" +
+                "queue=" + queue +
+                ", size=" + Size +
+                '}';
+    }
+
+    public CISQueue()
+    {
+        queue = new LinkedList<>();
+        Size = 0;
+    }
+
+    public int size()
+    {
+        return Size;
+    }
+
+    public void enqueue(int value) {
+        queue.addLast(value);
+        Size++;
+    }
+
+    public Integer dequeue()
+    {
+        if(isEmpty())
+        {
+            return null;
+        }
+        Integer dequeuedValue = queue.remove();
+        Size--;
+        return dequeuedValue;
+    }
+
+    public boolean isEmpty() {
+        return Size == 0;
+    }
+
+
+
 
     // Linked list property.
 
